@@ -1,0 +1,5 @@
+declare module "*.png"
+declare module "gatsby-plugin-transition-link/AniLink"
+declare module "gatsby-image"
+declare module "react-slideshow-image"
+declare module "react-helmet"

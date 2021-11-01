@@ -1,0 +1,46 @@
+#ImageViewer
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: 150000
+  background: #000d
+  cursor: pointer
+
+  display: flex
+  align-items: center
+  justify-content: center
+
+  .Image
+    width: 100vw
+    height: 100vh
+
+    display: flex
+    align-items: center
+    justify-content: center
+
+    img
+      max-height: 100%
+      max-width: 100%
+
+  svg
+    position: fixed
+    cursor: pointer
+    font-size: 4vw
+    color: white
+    border-radius: 50%
+    top: calc(50% - 2vw)
+    background: black
+
+    @media (orientation: portrait)
+      font-size: 4vh
+
+    &.Left
+      left: 20px
+
+    &.Right
+      right: 20px
+
+.ImageViewerImage
+  cursor: pointer

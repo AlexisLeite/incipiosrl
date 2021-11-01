@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&family=Zen+Antique&display=swap')
+@import './mixins'
+
+*
+  font-family: roboto
+  box-sizing: border-box
+  @include scroll
+
+html
+  font-size: 16pt
+  margin: 0
+  --rojo-incipio: #ed1c24
+
+
+body
+  margin: 0
+  background: url('/fondo.png')
+
+h2
+  margin: 0
+  
+.Stage
+  min-height: 100vh
+
+  @media (orientation: portrait)
+    min-height: 130vw
+
+  display: flex
+  align-items: center
+  justify-content: center
+  background-size: 50%
+  overflow: auto
+
+
+@keyframes VanishImage 
+  0%
+    opacity: 1
+  100% 
+    opacity: 0
+
+#HomeGallery
+  border:
+    top: 1px solid #999
+    bottom: 1px solid #999
+  margin-top: 3vw
+  display: flex
+  align-items: center
+  justify-content: center
+  background: #eee
+  padding: 50px
+  position: relative
+  height: 50vw
+
+  @media (orientation: portrait)
+    margin-bottom: 0vw
+
+  .HomeGalleryImage
+    position: absolute
+    top: 5vw
+    left: 5vw
+    background-color: #eee
+
+  #JobTitle
+    position: absolute
+    font: bold 2em Roboto
+    @media (max-width: 600px) 
+      font-size: 1em
+    color: white
+    text-shadow: 0 0 5px black
+    bottom: 10vw
+
+    a
+      color: white
+      text-decoration: none
+
+      &:hover
+        color: yellow
+
+  #PrevImage,
+  #Image
+    width: 90vw
+    height: 40vw
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center center
+    background-color: #eee
+
+  #Image
+    transform: scaleX(1.01)
+
+
+#Home
+  overflow-x: hidden
+  flex-direction: column
+  main
+    text-align: center
+    border: 1px solid #aaa
+      left: none
+      right: none
+    background: #eee
+    overflow-x: hidden
+    padding: 90px 0 90px 0
+    width: 100vw
+  h2
+    font-size: 18pt
+    font-weight: bold
+
+  #Logo
+    max-width: 30vw
+
+    @media (orientation: portrait)
+      max-width: 70vw
+
+#Highlights
+  text-align: center
+  img
+    min-width: 100vw
+    max-height: 100vh
+
+#ContactStage
+  @media (orientation: portrait)
+    height: 100vh
+    min-height: 0
+
+#Contact
+  display: flex
+  align-items: center
+  justify-content: center
+  background: #eee
+  padding: 60px
+  width: 100vw
+  border: 1px solid #aaa
+
+  & > div
+    padding: 40px
+
+    &:first-of-type
+      width: 35vw
+      border-right: 1px solid #999
+
+      h3
+        text-align: center!important
+
+      *
+        text-align: left !important
+
+  div
+    text-align: center
+
+    button
+      background: var(--rojo-incipio)
+      color: #fafafa
+      border-radius: 5px
+      border: none
+      display: inline
+      padding: 5px 15px
+
+      &:focus, &:active, &:hover
+        color: white
+        border-color: #333
+        box-shadow: 0 0 5px 0px black
+    
+    input, textarea
+      display: block
+      width: 35vw
+      margin: 5px
+      padding: 5px
+      font-size: 14pt
+      border: none
+        bottom: 1px solid #aaa
+
+    textarea
+      height: 120px
+      resize: none
+
+  h1
+    color: var(--rojo-incipio)
+    margin: 0 0 20px 0
+
+  a
+    color: #333
+    text-decoration: none
+
+  strong
+    margin-right: 10px
+    color: var(--rojo-incipio)
+    font-size: 22pt
+
+  @media (max-width: 600px) 
+    flex-direction: column
+    padding: 20px 0
+
+    *
+      font-size: 0.95em
+
+    h3
+      font-size: 1.3em
+
+    &> div
+      width: 95vw
+
+      &:first-of-type
+        width: 95vw 
+        margin: 0 0 20px 0
+        padding-bottom: 20px
+        border: none
+          bottom: 1px solid #999
+
+
+    div
+      padding: 0 5px
+      button
+        padding: 5px 15px
+
+      input, textarea
+        width: 85vw
+
+#Gallery
+  margin: 5vw auto
+  width: 90%
+  display: grid
+  grid-template-columns:  1fr
+  grid-row-gap: 1vw
+  grid-column-gap: 1vw
+
+  @media(min-width: 480px)
+    grid-template-columns: 1fr 1fr
+
+  @media(min-width: 990px)
+    grid-template-columns: 1fr 1fr 1fr
+  
+  .Portada
+    text-decoration: none
+    color: black
+    background: rgba(255,255,255,0.7)
+    border: 2px solid #aaa
+    box-sizing: border-bo
+    padding: 2rem
+    overflow: hidden
+    overflow-wrap: break-word
+    height: 100%
+
+    .JobImage
+      text-align: center
+
+      img
+        width: 100%
+
+    p
+      font-size: 11pt
+      margin: 0
+    h2
+      font-size: 13pt
+      color: var(--rojo-incipio)
+      font-weight: bold
+      text-align: center
+      text-decoration: underline
+      margin: 15px 0
+
+    img
+      width: auto
+      max-height: 40vh
+
+    .LeerMas
+      font-size: 10pt
+
+    .CantidadFotos
+      font-style: italic
+      font-size: 9pt !important
+      padding-bottom: 0.5rem
+      margin: auto auto 0 auto
+
+footer
+  text-align: center
+  background: #eee
+  border: 1px solid #999
+  padding: 6px
+
+  a
+    color: black
+    text-decoration: none
+    font-size: 0.8em
